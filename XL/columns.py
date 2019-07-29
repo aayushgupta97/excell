@@ -54,3 +54,9 @@ def compare_column_csv_excel(file1, file2, sheet):
     else:
         diff = (np.array(stripped_list_1) == np.array(stripped_list_2))
         return diff
+
+
+def get_columns(file):
+    file = pd.read_csv(file)
+    file_columns = [''.join(item.split('\n')) for item in file.columns.tolist()]
+    return file_columns
