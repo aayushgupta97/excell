@@ -59,4 +59,6 @@ def compare_column_csv_excel(file1, file2, sheet):
 def get_columns(file):
     file = pd.read_csv(file)
     file_columns = [''.join(item.split('\n')) for item in file.columns.tolist()]
+    # file_columns = file.columns.tolist()
     return file_columns
+
