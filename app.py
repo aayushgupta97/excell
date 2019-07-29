@@ -18,17 +18,24 @@ from XL.column_data import *
 # print(get_columns('FS_OWR_20.csv'))
 
 
-first_row = get_first_row_data('FS_OWR_20.csv')
-cols = get_columns('FS_OWR_20.csv')
-print(first_row)
+# first_row = get_first_row_data('FS_OWR_20.csv')
+# cols = get_columns('FS_OWR_20.csv')
+# # print(first_row)
+#
+# # print (get_fails('FS_OWR_20.csv', cols, first_row))
+#
+# result_list = get_results('FS_OWR_20.csv', cols, first_row)
+# print(result_list)
+# pass_list = result_list[0]
+# fail_list = result_list[1]
+#
+# print(pass_list)
+# print(fail_list)
 
-# print (get_fails('FS_OWR_20.csv', cols, first_row))
+# print(get_row_at_nth_position('FS_OWR_20.csv', 316))
 
-result_list = get_results('FS_OWR_20.csv', cols, first_row)
-pass_list = result_list[0]
-fail_list = result_list[1]
+# print(get_column_by_name('FS_OWR_20.csv', 'Taxability'))
 
-print(pass_list)
-print(fail_list)
 
-print(get_row_at_nth_position('FS_OWR_20.csv', 316))
+# print(get_distinct_column_values('FS_OWR_20.csv'))
+# print(get_null_values('FS_OWR_20.csv'))

@@ -27,6 +27,8 @@ def get_results(file, column_list, data_list):
                 else:
                     pass_check_list[count] += 1
             count = count + 1
+    else:
+        return 'Columns do not match. Cannot process further'
     pass_fail_list = [pass_check_list, fail_check_list]
     return pass_fail_list
 
@@ -43,8 +45,42 @@ def get_results(file, column_list, data_list):
 # def get_passes(file, lst):
 
 def get_row_at_nth_position(file, row_no):
-    file  = pd.read_csv(file)
+    file = pd.read_csv(file)
     df = pd.DataFrame(file)
     return df.iloc[row_no].tolist()
 
-# def get_column_by_name()
+
+def get_column_by_name(file, column_name):
+    file = pd.read_csv(file)
+    df = pd.DataFrame(file)
+    return df[column_name].tolist()
+
+
+def get_distinct_column_values(file):
+    file = pd.read_csv(file)
+    df = pd.DataFrame(file)
+    column_names = df.columns.tolist()
+
+    distinct_value_list = [[] for i in range(len(column_names))]
+    count = 0
+    for i in range(len(column_names)):
+        n_uni = df[column_names[count]].nunique()
+        uni = df[column_names[count]].unique()
+        distinct_value_list[count].append(n_uni)
+        distinct_value_list[count].append(uni)
+        count += 1
+    return distinct_value_list
+
+
+def get_null_values(file):
+    file = pd.read_csv(file)
+    df = pd.DataFrame(file)
+    column_names = df.columns.tolist()
+    null_value_list = [[] for i in range(len(column_names))]
+    count = 0
+    for i in range(len(column_names)):
+        nl = df[column_names[count]].isnull().sum()
+        null_value_list[count].append(nl)
+        count += 1
+    return null_value_list
+
