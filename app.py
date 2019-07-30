@@ -23,7 +23,7 @@ if args['xl2'] is not None:
     xl2 = parse_excel(args['xl2'])
 
 
-print(get_results(csv1, get_columns(csv1), get_first_row_data(csv1)))
+# print(get_results(csv1, get_columns(csv1), get_first_row_data(csv1)))
 
 # column_header_check = compare_column_csv('FS_OWR_20.csv', 'FS_OWR_20 (copy).csv')
 # column_header_check_2 = compare_column_excel('FS_OWR_20.csv', 'FS_OWR_20 (copy).csv')
@@ -82,4 +82,4 @@ print(get_results(csv1, get_columns(csv1), get_first_row_data(csv1)))
 
 # print(get_column_by_name('FS_OWR_20-Sheet1-Outward.csv', 'State'))
 
-# print(compare_column_csv(csv1, csv2))
+print(compare_column(csv1, csv2))
