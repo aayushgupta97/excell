@@ -1,4 +1,3 @@
-import csv
 import pandas as pd
 import numpy as np
 
@@ -25,5 +24,3 @@ def get_columns(df):
     # file_columns = file.columns.tolist()
     return file_columns
 
-def hello(nm):
-    return f"hello {nm}"
