@@ -4,8 +4,6 @@ import numpy as np
 
 
 def compare_column_csv(file1, file2):
-    file1 = pd.read_csv(file1)
-    file2 = pd.read_csv(file2)
     # df_1 = pd.DataFrame(file1)
     # print(type(df_1))
     # df_2 = pd.DataFrame(file2)
@@ -56,11 +54,10 @@ def compare_column_csv_excel(file1, file2, sheet):
         return diff
 
 
-def get_columns(file):
-    file = pd.read_csv(file)
-    file_columns = [''.join(item.split('\n')) for item in file.columns.tolist()]
+def get_columns(df):
+    file_columns = [''.join(item.split('\n')) for item in df.columns.tolist()]
     # file_columns = file.columns.tolist()
     return file_columns
 
-
-
+def hello(nm):
+    return f"hello {nm}"

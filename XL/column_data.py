@@ -2,17 +2,13 @@ import pandas as pd
 import numpy as np
 
 
-def get_first_row_data(file):
-    file = pd.read_csv(file)
+def get_first_row_data(df):
     # file_columns = [''.join(item.split('\n')) for item in file.columns.tolist()]
-    df = pd.DataFrame(file)
     first_row = df.iloc[0].tolist()
     return first_row
 
 
-def get_results(file, column_list, data_list):
-    file = pd.read_csv(file)
-    df = pd.DataFrame(file)
+def get_results(df, column_list, data_list):
     fail_check_list = [0 for i in range(len(column_list))]
     pass_check_list = [0 for i in range(len(column_list))]
     file_columns = [''.join(item.split('\n')) for item in df.columns.tolist()]
@@ -32,35 +28,17 @@ def get_results(file, column_list, data_list):
     pass_fail_list = [pass_check_list, fail_check_list]
     return pass_fail_list
 
-    # for col in lst:
-    #     return df[col]
-    # dd = list(pd.DataFrame(file))
-    # df = file.iloc[1].tolist()
-    # fail_check_list = [[] for i in range(len(lst))]
-    # for i in range(len(lst)):
-    #     if lst[i] == pd.iloc[]
-    # return fail_check_list
 
-
-# def get_passes(file, lst):
-
-def get_row_at_nth_position(file, row_no):
-    file = pd.read_csv(file)
-    df = pd.DataFrame(file)
+def get_row_at_nth_position(df, row_no):
     return df.iloc[row_no].tolist()
 
 
-def get_column_by_name(file, column_name):
-    file = pd.read_csv(file)
-    df = pd.DataFrame(file)
+def get_column_by_name(df, column_name):
     return df[column_name].tolist()
 
 
-def get_distinct_column_values(file):
-    file = pd.read_csv(file)
-    df = pd.DataFrame(file)
+def get_distinct_column_values(df):
     column_names = df.columns.tolist()
-
     distinct_value_list = [[] for i in range(len(column_names))]
     count = 0
     for i in range(len(column_names)):
@@ -72,9 +50,7 @@ def get_distinct_column_values(file):
     return distinct_value_list
 
 
-def get_null_values(file):
-    file = pd.read_csv(file)
-    df = pd.DataFrame(file)
+def get_null_values(df):
     column_names = df.columns.tolist()
     null_value_list = [[] for i in range(len(column_names))]
     count = 0

@@ -134,3 +134,6 @@ dmypy.json
 *.xlsx.lock
 .idea/
 .~lock.FS_OWR_20.xlsx#
+.ipynb_checkpoints
+*.ipynb
+*.csv#
